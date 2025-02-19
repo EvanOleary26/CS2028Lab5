@@ -4,6 +4,7 @@
 
 class Movies {
 private:
+    std::string title;
     int runtime; //Total length of the movie in minutes
 
 public:
@@ -14,10 +15,10 @@ public:
     void setRunTime(int newRunTime) { runtime = newRunTime; }
 
     //Constructors
-    Movies() : runtime(0) {}   //Default Constructor
+    Movies() : title(""), runtime(0) {}   //Default Constructor
 
     //Functions
-    void const Play();
+    void Play();
 
 };
 
