@@ -1,35 +1,23 @@
 #ifndef __SHELF_HPP
 #define __SHELF_HPP
-
 #include "Movies.h"
 
-const int SIZE = 10;
+const int SIZE = 4;
 
 class Shelf {
-    private:
-        Movies items[SIZE];
-        int index = 0;
-    public:
-        //Constructor 
-        Shelf() : index(0) {}
+private:
+	Movies items[SIZE];
+	int index = 0; //current highest point of the shelf
 
-        //Add Movie
-        void addMovie(Movies inMovie);
+public:
 
-        //Remove Movie
-        Movies remMovie();
+	void addMovie(Movies inMovie);
 
-        //isEmpty and isFull
-        bool isEmpty();
-        bool isFull();
+	Movies remMovie();
+
+	bool const isEmpty();
+
+	bool const isFull();
 };
-
-
-
-
-
-
-
-
 
 #endif
