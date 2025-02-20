@@ -1,8 +1,9 @@
 #include "Shelf.h"
 
-void Shelf::addMovie(Movies inMovie) {
+void Shelf::addMovie(std::string inTitle) {
 	if (index < SIZE) {
-		items[index] = inMovie;
+		Movies* movie = new Movies(inTitle);
+		items[index] = *movie;
 		index++;
 	}
 	//throw StackOverflow;

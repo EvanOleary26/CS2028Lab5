@@ -11,7 +11,10 @@ private:
 
 public:
 
-	void addMovie(Movies inMovie);
+	int getIndex() { return index; }
+	
+	//Functions
+	void addMovie(std::string inTitle);
 
 	Movies remMovie();
 
