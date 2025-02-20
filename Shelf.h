@@ -2,7 +2,7 @@
 #define __SHELF_HPP
 #include "Movies.h"
 
-const int SIZE = 4;
+const int SIZE = 10;
 
 class Shelf {
 private:
@@ -14,7 +14,7 @@ public:
 	int getIndex() { return index; }
 	
 	//Functions
-	void addMovie(std::string inTitle);
+	void addMovie(Movies inMovie);
 
 	Movies remMovie();
 
