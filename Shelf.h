@@ -1,6 +1,7 @@
 #ifndef __SHELF_HPP
 #define __SHELF_HPP
 #include "Movies.h"
+#include "Exceptions.h"
 
 const int SIZE = 10;
 

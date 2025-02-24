@@ -5,7 +5,7 @@ void Shelf::addMovie(Movies inMovie) {
 		items[index] = inMovie;
 		index++;
 	}
-	//throw StackOverflow;
+	throw FullShelf("Full Shelf",0);
 }
 
 Movies Shelf::remMovie() {
@@ -13,7 +13,7 @@ Movies Shelf::remMovie() {
 		index--;
 		return items[index];
 	}
-	//throw StackUnderflow;
+	throw EmptyShelf("Empty Shelf", 1);
 }
 
 bool const Shelf::isEmpty(){

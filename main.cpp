@@ -15,7 +15,7 @@ int main() {
 		std::cin >> opChoice;
 		if (opChoice == 1) {
 			//addmovie
-			if (shelf.getIndex() < SIZE) {
+			try {
 				std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Igitnore '\n' for getline
 				std::cout << "\nWhat is the title of the movie you would like to add?" << std::endl;
 				std::string title;
@@ -24,17 +24,18 @@ int main() {
 				shelf.addMovie(*movie);
 				std::cout << title << " was added to the shelf." << std::endl;
 			}
-			else {
-				std::cout << "\nThere is not enough room on the shelf. Please remove a movie before adding a new one." << std::endl;
+			catch (FullShelf) {
+				std::cout << "Tried adding too many movies to the shelf. Try removing a movie before adding another." << std::endl;
 			}
 
 		}
 		else if (opChoice == 2) {
 			//removemovie
-			if (shelf.getIndex() > 0) {
+			try {
 				std::cout << "\nRemoved " << shelf.remMovie().getTitle() << " from the shelf." << std::endl;
-			} else {
-				std::cout << "There are no movies on the shelf. Please add a movie if you want to remove a movie" << std::endl;
+			}
+			catch(EmptyShelf) {
+				std::cout << "Tried removing a movie when there are no movies in the shelf. Please add a movie before trying to remove." << std:: endl;
 			}
 			
 		}
