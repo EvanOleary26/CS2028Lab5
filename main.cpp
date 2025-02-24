@@ -22,6 +22,7 @@ int main() {
 				std::getline(std::cin,title);
 				Movies *movie = new Movies(title);	//Dynamically create a new movie
 				shelf.addMovie(*movie);
+				delete movie;
 				std::cout << title << " was added to the shelf." << std::endl;
 			}
 			catch (FullShelf) {

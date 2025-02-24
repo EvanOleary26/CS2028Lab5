@@ -4,16 +4,18 @@ void Shelf::addMovie(Movies inMovie) {
 	if (index < SIZE) {
 		items[index] = inMovie;
 		index++;
-	}
+	} else {
 	throw FullShelf("Full Shelf",0);
+	}
 }
 
 Movies Shelf::remMovie() {
 	if (index > 0) {
 		index--;
 		return items[index];
-	}
+	} else {
 	throw EmptyShelf("Empty Shelf", 1);
+	}
 }
 
 bool const Shelf::isEmpty(){
